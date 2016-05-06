@@ -104,7 +104,7 @@ int cryptoMessageSign(const HDNode *node, const uint8_t *message, size_t message
 {
 	SHA256_CTX ctx;
 	sha256_Init(&ctx);
-	sha256_Update(&ctx, (const uint8_t *)"\x18" "Bitcoin Signed Message:" "\n", 25);
+	sha256_Update(&ctx, (const uint8_t *)"\x19" "DarkCoin Signed Message:" "\n", 26);
 	uint8_t varint[5];
 	uint32_t l = ser_length(message_len, varint);
 	sha256_Update(&ctx, varint, l);
@@ -127,7 +127,7 @@ int cryptoMessageVerify(const uint8_t *message, size_t message_len, const uint8_
 
 	// calculate hash
 	sha256_Init(&ctx);
-	sha256_Update(&ctx, (const uint8_t *)"\x18" "Bitcoin Signed Message:" "\n", 25);
+	sha256_Update(&ctx, (const uint8_t *)"\x19" "DarkCoin Signed Message:" "\n", 26);
 	uint8_t varint[5];
 	uint32_t l = ser_length(message_len, varint);
 	sha256_Update(&ctx, varint, l);
