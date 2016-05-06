@@ -27,6 +27,7 @@ const CoinType coins[COINS_COUNT] = {
 	{true, "Litecoin", true, "LTC",  true,  48, true,    1000000, true,   5, false, 0, false, 0},
 	{true, "Dogecoin", true, "DOGE", true,  30, true, 1000000000, true,  22, false, 0, false, 0},
 	{true, "Dash",     true, "DASH", true,  76, true,     100000, true,  16, false, 0, false, 0},
+        {true, "TDash",    true, "TDASH",true, 139, true,     100000, true,  19, false, 0, false, 0},
 };
 
 const CoinType *coinByShortcut(const char *shortcut)
